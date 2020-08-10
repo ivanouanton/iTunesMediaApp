@@ -10,5 +10,5 @@ import Foundation
 
 struct BaseURLs {
     
-    static let simpsons = "https://itunes.apple.com/"
+    static let iTunes = "https://itunes.apple.com/"
 }
