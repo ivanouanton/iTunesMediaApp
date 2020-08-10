@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class iTunesMediaViewController: UIViewController {
+class ITunesMediaViewController: UIViewController {
         @IBOutlet var tableView: UITableView!
         
         private var objects: [Media] = []
@@ -33,14 +33,14 @@ class iTunesMediaViewController: UIViewController {
         }
     }
 
-    extension iTunesMediaViewController: UISearchResultsUpdating {
+    extension ITunesMediaViewController: UISearchResultsUpdating {
         func updateSearchResults(for searchController: UISearchController) {
             guard let text = searchController.searchBar.text else { return }
             fetchITunesObjects(with: text)
         }
     }
 
-    extension iTunesMediaViewController: UITableViewDataSource {
+    extension ITunesMediaViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return  objects.count
         }
@@ -56,7 +56,7 @@ class iTunesMediaViewController: UIViewController {
     }
 
 
-    extension iTunesMediaViewController {
+    extension ITunesMediaViewController {
         func fetchITunesObjects(with title: String = "platincoin") {
             
         // 1
