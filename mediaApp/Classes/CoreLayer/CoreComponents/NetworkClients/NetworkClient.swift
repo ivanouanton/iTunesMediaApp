@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
 import Alamofire
-import AlamofireObjectMapper
 
 class NetworkClient {
     
@@ -20,8 +18,8 @@ class NetworkClient {
     }
     
     func getArray<T>(urlString: String,
-                     success: @escaping (Int, [T]) -> (),
-                     failure: @escaping (Int) -> ()) where T: BaseMappable {
+                     success: @escaping (Int, T) -> (),
+                     failure: @escaping (Int) -> ()) where T: Codable {
         
         let headers: HTTPHeaders = [
             "Accept": "application/json",
@@ -34,28 +32,33 @@ class NetworkClient {
         
         let urlString = url.absoluteString!
         
-        Alamofire
+        let request = Alamofire
             .request(urlString,
                      method: .get,
                      encoding: JSONEncoding.default,
                      headers: headers)
-            .responseArray { (dataResponse: DataResponse<[T]>) in
-                
-                guard let serverResponse = dataResponse.response,
-                    let resultValue = dataResponse.result.value else {
-                        failure(400)
-                        return
-                }
-                
-                switch serverResponse.statusCode {
-                case 200, 201:
-                    success(serverResponse.statusCode, resultValue)
-                default:
-                    failure(serverResponse.statusCode)
-                }
-                
-        }
         
+        request.responseJSON { response in
+            
+            guard let serverResponse = response.response else {
+                failure(400)
+                return
+            }
+            
+            switch serverResponse.statusCode {
+            case 200, 201:
+                let decoder = JSONDecoder()
+                do {
+                    let itunesObjects = try decoder.decode(ITunesObj.self, from: response.data!)
+                    success(serverResponse.statusCode, itunesObjects as! T)
+                } catch let error {
+                    print(error.localizedDescription)
+                    failure(0)
+                }
+                
+            default:
+                failure(serverResponse.statusCode)
+            }
+        }
     }
-    
 }

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct ITunesRequestConfigurator {
+    
+    static func configureURLString(_ baseURL: String, _ parameter: String, _ value: String) -> String {
+        return baseURL + "?" + parameter + "=" + value
+    }
+}
