@@ -9,9 +9,9 @@
 class ViewFactory{
     
     static func createITunesMediaController() -> ITunesMediaViewController{
-        let vc = ITunesMediaViewController(nibName: "ITunesMediaViewController", bundle: nil)
-//        let presenter = ITunesMediaPresenter(view: vc)
-//        vc.presenter = presenter
+        let vc = ITunesMediaViewController(nibName: "iTunesMediaViewController", bundle: nil)
+        let presenter = ITunesMediaPresenter(view: vc)
+        vc.presenter = presenter
         return vc
     }
 }

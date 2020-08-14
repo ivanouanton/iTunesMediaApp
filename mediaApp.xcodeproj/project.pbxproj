@@ -15,7 +15,10 @@
 		3A7FA08024DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FA07E24DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift */; };
 		3A7FA08124DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FA07F24DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib */; };
 		3A7FA08324DBEE9800FC39A6 /* AutoIndentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FA08224DBEE9800FC39A6 /* AutoIndentifierCell.swift */; };
-		3A9B65B324DB063A0085E396 /* itunesObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B65B224DB063A0085E396 /* itunesObj.swift */; };
+		3A819FD124E5247F009A47A8 /* ITunesMediaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A819FD024E5247F009A47A8 /* ITunesMediaPresenter.swift */; };
+		3A819FD324E52491009A47A8 /* ITunesMediaPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A819FD224E52491009A47A8 /* ITunesMediaPresenterProtocol.swift */; };
+		3A819FD524E524BB009A47A8 /* ITunesMediaViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A819FD424E524BB009A47A8 /* ITunesMediaViewProtocol.swift */; };
+		3A9B65B324DB063A0085E396 /* ITunesObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B65B224DB063A0085E396 /* ITunesObj.swift */; };
 		3A9C732624E1444300585C5D /* ITunesMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C732424E1444300585C5D /* ITunesMediaViewController.swift */; };
 		3A9C732724E1444300585C5D /* iTunesMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C732524E1444300585C5D /* iTunesMediaViewController.xib */; };
 		3A9C732F24E15BF700585C5D /* BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C732E24E15BF700585C5D /* BaseURLs.swift */; };
@@ -39,7 +42,10 @@
 		3A7FA07E24DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesObjTableViewCell.swift; sourceTree = "<group>"; };
 		3A7FA07F24DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesObjTableViewCell.xib; sourceTree = "<group>"; };
 		3A7FA08224DBEE9800FC39A6 /* AutoIndentifierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoIndentifierCell.swift; sourceTree = "<group>"; };
-		3A9B65B224DB063A0085E396 /* itunesObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itunesObj.swift; sourceTree = "<group>"; };
+		3A819FD024E5247F009A47A8 /* ITunesMediaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMediaPresenter.swift; sourceTree = "<group>"; };
+		3A819FD224E52491009A47A8 /* ITunesMediaPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMediaPresenterProtocol.swift; sourceTree = "<group>"; };
+		3A819FD424E524BB009A47A8 /* ITunesMediaViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMediaViewProtocol.swift; sourceTree = "<group>"; };
+		3A9B65B224DB063A0085E396 /* ITunesObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesObj.swift; sourceTree = "<group>"; };
 		3A9C732424E1444300585C5D /* ITunesMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMediaViewController.swift; sourceTree = "<group>"; };
 		3A9C732524E1444300585C5D /* iTunesMediaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iTunesMediaViewController.xib; sourceTree = "<group>"; };
 		3A9C732E24E15BF700585C5D /* BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLs.swift; sourceTree = "<group>"; };
@@ -104,6 +110,25 @@
 			path = mediaApp;
 			sourceTree = "<group>";
 		};
+		3A819FD624E524C6009A47A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C732424E1444300585C5D /* ITunesMediaViewController.swift */,
+				3A819FD424E524BB009A47A8 /* ITunesMediaViewProtocol.swift */,
+				3A9C732524E1444300585C5D /* iTunesMediaViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A819FD724E524D0009A47A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A819FD024E5247F009A47A8 /* ITunesMediaPresenter.swift */,
+				3A819FD224E52491009A47A8 /* ITunesMediaPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3A98302E24E1315900FB770A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				3A9C732824E1524500585C5D /* iTunes Cell */,
-				3A9C732424E1444300585C5D /* ITunesMediaViewController.swift */,
-				3A9C732524E1444300585C5D /* iTunesMediaViewController.xib */,
+				3A819FD624E524C6009A47A8 /* View */,
+				3A819FD724E524D0009A47A8 /* Presenter */,
 			);
 			path = iTunesMediaVC;
 			sourceTree = "<group>";
@@ -251,7 +276,7 @@
 		3A9C734324E17B1D00585C5D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B65B224DB063A0085E396 /* itunesObj.swift */,
+				3A9B65B224DB063A0085E396 /* ITunesObj.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -391,10 +416,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7FA08024DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift in Sources */,
-				3A9B65B324DB063A0085E396 /* itunesObj.swift in Sources */,
+				3A819FD324E52491009A47A8 /* ITunesMediaPresenterProtocol.swift in Sources */,
+				3A9B65B324DB063A0085E396 /* ITunesObj.swift in Sources */,
 				3AB7700724E17D2F0058438E /* Service.swift in Sources */,
 				3A9C733B24E15E0000585C5D /* ITunesRequestConfigurator.swift in Sources */,
 				3A9C734524E17B3200585C5D /* ITunesService.swift in Sources */,
+				3A819FD124E5247F009A47A8 /* ITunesMediaPresenter.swift in Sources */,
 				3A9C734224E175C700585C5D /* Object+ClassName.swift in Sources */,
 				3A9C732F24E15BF700585C5D /* BaseURLs.swift in Sources */,
 				3A06B41D24D9877600829286 /* AppDelegate.swift in Sources */,
@@ -405,6 +432,7 @@
 				3A9C733E24E16B9D00585C5D /* ViewFactory.swift in Sources */,
 				3A9C733824E15D5E00585C5D /* Endpoints.swift in Sources */,
 				3A9C733124E15CCF00585C5D /* NetworkClient.swift in Sources */,
+				3A819FD524E524BB009A47A8 /* ITunesMediaViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
