@@ -27,10 +27,12 @@ class NetworkClient {
         ]
                 
         let request = Alamofire
-            .request("\(self.baseURL ?? "")\(urlString)&limit=25&country=us",
+            .request("\(self.baseURL ?? "")\(urlString)",
                      method: .get,
                      encoding: JSONEncoding.default,
                      headers: headers)
+        
+        print(request.request as Any)
         
         request.responseJSON { response in
             

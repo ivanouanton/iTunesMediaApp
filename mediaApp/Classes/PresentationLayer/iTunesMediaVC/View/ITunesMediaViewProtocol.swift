@@ -9,4 +9,5 @@
 protocol ITunesMediaViewProtocol: class {
     func showModalError(with message: String)
     func updateList(with data: [Media])
+    func updateMore(with data: [Media])
 }

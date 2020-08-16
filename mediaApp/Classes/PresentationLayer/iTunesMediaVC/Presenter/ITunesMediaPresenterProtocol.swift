@@ -9,4 +9,5 @@
 protocol ITunesMediaPresenterProtocol{
     init(view: ITunesMediaViewProtocol)
     func fetchData(with value: String)
+    func loadMore()
 }

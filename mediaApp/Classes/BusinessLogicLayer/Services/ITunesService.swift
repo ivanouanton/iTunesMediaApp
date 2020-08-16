@@ -7,6 +7,7 @@
 //
 
 private let iTunesServiceName = "iTunesService"
+private let objslimit: Int = 25
 
 extension ServiceRegistryImplementation {
     var iTunesService: ITunesService {
@@ -17,19 +18,31 @@ extension ServiceRegistryImplementation {
 }
 
 protocol ITunesService: Service {
-    func getITunesMedia(with data: String, success: @escaping (Int, ITunesObj) -> (), failure: @escaping (Int) -> ())
+    var limit: Int { get }
+    func getITunesMedia(with data: String, offset: Int, success: @escaping (Int, ITunesObj) -> (), failure: @escaping (Int) -> ())
 }
 
 extension ITunesService {
+    
     var serviceName: String {
         get {
             return iTunesServiceName
         }
     }
     
-    func getITunesMedia(with data: String, success: @escaping (Int, ITunesObj) -> (), failure: @escaping (Int) -> ()) {
+    var limit: Int {
+        get {
+            return objslimit
+        }
+    }
+    
+    func getITunesMedia(with data: String, offset: Int = 0, success: @escaping (Int, ITunesObj) -> (), failure: @escaping (Int) -> ()) {
         
-        let urlString = ITunesRequestConfigurator.configureURLString(Endpoints.Search, "term", "\(data)")
+        let urlString = ITunesRequestConfigurator.configureURLString(Endpoints.Search, parameters: [
+            "term" : "\(data)",
+            "limit" : "\(objslimit)",
+            "offset" : "\(offset)",
+            "country" : "us"])
         let client = NetworkClient(baseUrl: BaseURLs.iTunes)
 
         client.getArray(urlString: urlString, success: { (code, iTunesObjects) in
