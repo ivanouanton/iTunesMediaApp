@@ -30,6 +30,7 @@
 		3A9C734224E175C700585C5D /* Object+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C734124E175C700585C5D /* Object+ClassName.swift */; };
 		3A9C734524E17B3200585C5D /* ITunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C734424E17B3200585C5D /* ITunesService.swift */; };
 		3AB7700724E17D2F0058438E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7700624E17D2F0058438E /* Service.swift */; };
+		F7F5DB1924E97E0100E2EC1C /* String+Whitespasces.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		60DCB5C6818D7AD14793B7CF /* Pods-mediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediaApp.release.xcconfig"; path = "Target Support Files/Pods-mediaApp/Pods-mediaApp.release.xcconfig"; sourceTree = "<group>"; };
 		CA9FFC4C5A282AC79FA8A008 /* Pods-mediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediaApp.debug.xcconfig"; path = "Target Support Files/Pods-mediaApp/Pods-mediaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6002F44468D0E97748C6CFE /* Pods_mediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespasces.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				3A9C733F24E16FD300585C5D /* UIView+Nib.swift */,
 				3A9C733D24E16B9D00585C5D /* ViewFactory.swift */,
 				3A9C734124E175C700585C5D /* Object+ClassName.swift */,
+				F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				3A7FA08324DBEE9800FC39A6 /* AutoIndentifierCell.swift in Sources */,
 				3A9C732624E1444300585C5D /* ITunesMediaViewController.swift in Sources */,
 				3A06B41F24D9877600829286 /* SceneDelegate.swift in Sources */,
+				F7F5DB1924E97E0100E2EC1C /* String+Whitespasces.swift in Sources */,
 				3A9C734024E16FD300585C5D /* UIView+Nib.swift in Sources */,
 				3A9C733E24E16B9D00585C5D /* ViewFactory.swift in Sources */,
 				3A9C733824E15D5E00585C5D /* Endpoints.swift in Sources */,

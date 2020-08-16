@@ -22,8 +22,11 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
     }
     
     func fetchData(with value: String) {
+
+        let searchVal = value.condenseWhitespace(with: "+")
+
         offset = 0
-        iTunesService.getITunesMedia(with: value, success: { (code, objects) in
+        iTunesService.getITunesMedia(with: searchVal, success: { (code, objects) in
             self.searchValue = value
             self.view?.updateList(with: objects.results)
         }) { (code) in

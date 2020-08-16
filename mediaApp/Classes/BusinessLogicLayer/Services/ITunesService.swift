@@ -42,7 +42,8 @@ extension ITunesService {
             "term" : "\(data)",
             "limit" : "\(objslimit)",
             "offset" : "\(offset)",
-            "country" : "us"])
+            "country" : "us",
+            "media" : "all"])
         let client = NetworkClient(baseUrl: BaseURLs.iTunes)
 
         client.getArray(urlString: urlString, success: { (code, iTunesObjects) in
