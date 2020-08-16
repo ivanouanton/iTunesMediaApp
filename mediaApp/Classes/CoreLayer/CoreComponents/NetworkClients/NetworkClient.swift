@@ -11,10 +11,10 @@ import Alamofire
 
 class NetworkClient {
     
-    var baseURL: URL?
+    var baseURL: String?
     
     required init(baseUrl: String){
-        self.baseURL = URL(string: baseUrl)
+        self.baseURL = baseUrl
     }
     
     func getArray<T>(urlString: String,
@@ -25,18 +25,14 @@ class NetworkClient {
             "Accept": "application/json",
             "Content-Type": "application/json"
         ]
-        
-        guard let url = NSURL(string: urlString , relativeTo: self.baseURL as URL?) else {
-            return
-        }
-        
-        let urlString = url.absoluteString!
-        
+                
         let request = Alamofire
-            .request(urlString,
+            .request("\(self.baseURL ?? "")\(urlString)",
                      method: .get,
                      encoding: JSONEncoding.default,
                      headers: headers)
+        
+        print(request.request as Any)
         
         request.responseJSON { response in
             

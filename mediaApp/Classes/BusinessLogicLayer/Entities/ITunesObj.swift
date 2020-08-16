@@ -21,8 +21,8 @@ struct ITunesObj: Codable {
 
 // MARK: - Media
 struct Media: Codable {
-    let trackName: String
-    let kind: String
+    let trackName: String?
+    let kind: String?
     
     enum CodingKeys: String, CodingKey {
         case trackName = "trackName"
