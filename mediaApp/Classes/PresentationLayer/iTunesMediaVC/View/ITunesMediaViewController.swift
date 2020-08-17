@@ -21,10 +21,7 @@ class ITunesMediaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
-        
+        setupUI()
         setupSearchController()
     }
     
@@ -36,6 +33,21 @@ class ITunesMediaViewController: UIViewController {
         searchController.searchBar.sizeToFit()
         searchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    private func setupUI() {
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(savedTapped))
+
+    }
+    
+    @objc func savedTapped() {
+        let vc = ViewFactory.createStorageViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

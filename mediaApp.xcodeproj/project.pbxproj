@@ -31,6 +31,8 @@
 		3A9C734524E17B3200585C5D /* ITunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C734424E17B3200585C5D /* ITunesService.swift */; };
 		3AB7700724E17D2F0058438E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7700624E17D2F0058438E /* Service.swift */; };
 		F7F5DB1924E97E0100E2EC1C /* String+Whitespasces.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */; };
+		F7F5DB1C24E9C11100E2EC1C /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5DB1A24E9C11100E2EC1C /* StorageViewController.swift */; };
+		F7F5DB1D24E9C11100E2EC1C /* StorageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F5DB1B24E9C11100E2EC1C /* StorageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		CA9FFC4C5A282AC79FA8A008 /* Pods-mediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediaApp.debug.xcconfig"; path = "Target Support Files/Pods-mediaApp/Pods-mediaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6002F44468D0E97748C6CFE /* Pods_mediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespasces.swift"; sourceTree = "<group>"; };
+		F7F5DB1A24E9C11100E2EC1C /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		F7F5DB1B24E9C11100E2EC1C /* StorageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			children = (
 				3A9C732C24E1550100585C5D /* Helpers */,
 				3A9C732B24E1545400585C5D /* iTunesMediaVC */,
+				F7F5DB1E24E9C11600E2EC1C /* StorageVC */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -293,6 +298,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F7F5DB1E24E9C11600E2EC1C /* StorageVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7F5DB1A24E9C11100E2EC1C /* StorageViewController.swift */,
+				F7F5DB1B24E9C11100E2EC1C /* StorageViewController.xib */,
+			);
+			path = StorageVC;
+			sourceTree = "<group>";
+		};
 		FFB140AD6B72E8A50998CACF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +380,7 @@
 				3A9C732724E1444300585C5D /* iTunesMediaViewController.xib in Resources */,
 				3A7FA08124DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib in Resources */,
 				3A06B42624D9877900829286 /* Assets.xcassets in Resources */,
+				F7F5DB1D24E9C11100E2EC1C /* StorageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +451,7 @@
 				3A9C733E24E16B9D00585C5D /* ViewFactory.swift in Sources */,
 				3A9C733824E15D5E00585C5D /* Endpoints.swift in Sources */,
 				3A9C733124E15CCF00585C5D /* NetworkClient.swift in Sources */,
+				F7F5DB1C24E9C11100E2EC1C /* StorageViewController.swift in Sources */,
 				3A819FD524E524BB009A47A8 /* ITunesMediaViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
