@@ -12,9 +12,15 @@ class StorageViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
+    var presenter: StoragePresenterProtocol!
+    
+    private var iTunesObjs: [Media] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
+        presenter.fetchSavedData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,10 +34,22 @@ class StorageViewController: UIViewController {
 
 extension StorageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return iTunesObjs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: ITunesObjTableViewCell.identifier, for: indexPath) as! ITunesObjTableViewCell
+        
+        cell.titleLbl?.text = iTunesObjs[indexPath.row].trackName
+        cell.typeLbl?.text = iTunesObjs[indexPath.row].kind
+        
+        return cell
+    }
+}
+
+extension StorageViewController: StorageViewProtocol {
+    func updateList(with data: [Media]) {
+        iTunesObjs = data
+        tableView.reloadData()
     }
 }

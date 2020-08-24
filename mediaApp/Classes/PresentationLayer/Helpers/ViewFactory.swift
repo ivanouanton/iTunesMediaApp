@@ -17,6 +17,8 @@ class ViewFactory{
     
     static func createStorageViewController() -> StorageViewController {
         let vc = StorageViewController(nibName: "StorageViewController", bundle: nil)
+        let presenter = StoragePresenter(view: vc)
+        vc.presenter = presenter
         return vc
     }
 }
