@@ -15,7 +15,13 @@ class StorageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let objects = DataProvider().objects(StoreMediaObj.self)
+        print("Itunes objects count is: \(String(describing: objects?.count))")
     }
 
 }

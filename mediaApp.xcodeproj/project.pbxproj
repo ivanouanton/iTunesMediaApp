@@ -12,6 +12,8 @@
 		3A06B41F24D9877600829286 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06B41E24D9877600829286 /* SceneDelegate.swift */; };
 		3A06B42624D9877900829286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B42524D9877900829286 /* Assets.xcassets */; };
 		3A06B42924D9877900829286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A06B42724D9877900829286 /* LaunchScreen.storyboard */; };
+		3A7962C124EA92A70016E105 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7962C024EA92A70016E105 /* DataProvider.swift */; };
+		3A7962C424EABF600016E105 /* Results+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7962C324EABF600016E105 /* Results+Array.swift */; };
 		3A7FA08024DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FA07E24DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift */; };
 		3A7FA08124DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FA07F24DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib */; };
 		3A7FA08324DBEE9800FC39A6 /* AutoIndentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FA08224DBEE9800FC39A6 /* AutoIndentifierCell.swift */; };
@@ -29,6 +31,8 @@
 		3A9C734024E16FD300585C5D /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C733F24E16FD300585C5D /* UIView+Nib.swift */; };
 		3A9C734224E175C700585C5D /* Object+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C734124E175C700585C5D /* Object+ClassName.swift */; };
 		3A9C734524E17B3200585C5D /* ITunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C734424E17B3200585C5D /* ITunesService.swift */; };
+		3A9F573524F1225B001B6EFD /* DBClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F573424F1225B001B6EFD /* DBClientProtocol.swift */; };
+		3A9F573724F122C9001B6EFD /* RealmDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F573624F122C9001B6EFD /* RealmDBClient.swift */; };
 		3AB7700724E17D2F0058438E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7700624E17D2F0058438E /* Service.swift */; };
 		F7F5DB1924E97E0100E2EC1C /* String+Whitespasces.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5DB1824E97E0100E2EC1C /* String+Whitespasces.swift */; };
 		F7F5DB1C24E9C11100E2EC1C /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5DB1A24E9C11100E2EC1C /* StorageViewController.swift */; };
@@ -42,6 +46,8 @@
 		3A06B42524D9877900829286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A06B42824D9877900829286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A06B42A24D9877900829286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7962C024EA92A70016E105 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		3A7962C324EABF600016E105 /* Results+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+Array.swift"; sourceTree = "<group>"; };
 		3A7FA07E24DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesObjTableViewCell.swift; sourceTree = "<group>"; };
 		3A7FA07F24DBEB4C00FC39A6 /* ITunesObjTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesObjTableViewCell.xib; sourceTree = "<group>"; };
 		3A7FA08224DBEE9800FC39A6 /* AutoIndentifierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoIndentifierCell.swift; sourceTree = "<group>"; };
@@ -59,6 +65,8 @@
 		3A9C733F24E16FD300585C5D /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		3A9C734124E175C700585C5D /* Object+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+ClassName.swift"; sourceTree = "<group>"; };
 		3A9C734424E17B3200585C5D /* ITunesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesService.swift; sourceTree = "<group>"; };
+		3A9F573424F1225B001B6EFD /* DBClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBClientProtocol.swift; sourceTree = "<group>"; };
+		3A9F573624F122C9001B6EFD /* RealmDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBClient.swift; sourceTree = "<group>"; };
 		3AB7700624E17D2F0058438E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		60DCB5C6818D7AD14793B7CF /* Pods-mediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediaApp.release.xcconfig"; path = "Target Support Files/Pods-mediaApp/Pods-mediaApp.release.xcconfig"; sourceTree = "<group>"; };
 		CA9FFC4C5A282AC79FA8A008 /* Pods-mediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediaApp.debug.xcconfig"; path = "Target Support Files/Pods-mediaApp/Pods-mediaApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +122,17 @@
 				3A98302E24E1315900FB770A /* Supporting Files */,
 			);
 			path = mediaApp;
+			sourceTree = "<group>";
+		};
+		3A7962C224EABF360016E105 /* Realm Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				3A7962C024EA92A70016E105 /* DataProvider.swift */,
+				3A7962C324EABF600016E105 /* Results+Array.swift */,
+				3A9F573424F1225B001B6EFD /* DBClientProtocol.swift */,
+				3A9F573624F122C9001B6EFD /* RealmDBClient.swift */,
+			);
+			path = "Realm Wrapper";
 			sourceTree = "<group>";
 		};
 		3A819FD624E524C6009A47A8 /* View */ = {
@@ -252,6 +271,7 @@
 			children = (
 				3A9C733224E15D0300585C5D /* NetworkClients */,
 				3A9C733C24E15E0800585C5D /* RequestConfigurators */,
+				3A7962C224EABF360016E105 /* Realm Wrapper */,
 			);
 			path = CoreComponents;
 			sourceTree = "<group>";
@@ -436,8 +456,11 @@
 				3A7FA08024DBEB4C00FC39A6 /* ITunesObjTableViewCell.swift in Sources */,
 				3A819FD324E52491009A47A8 /* ITunesMediaPresenterProtocol.swift in Sources */,
 				3A9B65B324DB063A0085E396 /* ITunesObj.swift in Sources */,
+				3A7962C124EA92A70016E105 /* DataProvider.swift in Sources */,
+				3A9F573524F1225B001B6EFD /* DBClientProtocol.swift in Sources */,
 				3AB7700724E17D2F0058438E /* Service.swift in Sources */,
 				3A9C733B24E15E0000585C5D /* ITunesRequestConfigurator.swift in Sources */,
+				3A7962C424EABF600016E105 /* Results+Array.swift in Sources */,
 				3A9C734524E17B3200585C5D /* ITunesService.swift in Sources */,
 				3A819FD124E5247F009A47A8 /* ITunesMediaPresenter.swift in Sources */,
 				3A9C734224E175C700585C5D /* Object+ClassName.swift in Sources */,
@@ -452,6 +475,7 @@
 				3A9C733824E15D5E00585C5D /* Endpoints.swift in Sources */,
 				3A9C733124E15CCF00585C5D /* NetworkClient.swift in Sources */,
 				F7F5DB1C24E9C11100E2EC1C /* StorageViewController.swift in Sources */,
+				3A9F573724F122C9001B6EFD /* RealmDBClient.swift in Sources */,
 				3A819FD524E524BB009A47A8 /* ITunesMediaViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

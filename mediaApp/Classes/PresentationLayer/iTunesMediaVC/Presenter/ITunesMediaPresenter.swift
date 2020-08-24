@@ -13,12 +13,14 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
     weak var view: ITunesMediaViewProtocol?
     
     private let iTunesService = ServiceRegistry.iTunesService
+    private let realmStorageService: DBClentProtocol?
     
     private var offset: Int = 0
     private var searchValue: String = ""
 
     required init(view: ITunesMediaViewProtocol) {
         self.view = view
+        realmStorageService = RealmDBClient()
     }
     
     func fetchData(with value: String) {
@@ -42,6 +44,10 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
         }) { (code) in
             self.offset -= self.iTunesService.limit
         }
+    }
+    
+    func save(with value: Media) {
+        realmStorageService?.saveObject(with: value)
     }
     
 }

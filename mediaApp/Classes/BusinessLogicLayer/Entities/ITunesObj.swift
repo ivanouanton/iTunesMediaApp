@@ -24,6 +24,7 @@ struct ITunesObj: Codable {
 struct Media: Codable {
     let trackName: String?
     let kind: String?
+    var saved: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case trackName = "trackName"
@@ -32,15 +33,11 @@ struct Media: Codable {
 }
 
 public class StoreMediaObj: Object {
+    @objc dynamic var id = ""
     @objc dynamic var trackName: String?
     @objc dynamic var kind: String?
     
-    init(with media: Media) {
-        self.trackName = media.trackName
-        self.kind = media.kind
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
+    public override static func primaryKey() -> String? {
+        return "id"
     }
 }

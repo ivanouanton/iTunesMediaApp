@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class ITunesMediaViewController: UIViewController {
     
@@ -70,6 +71,11 @@ extension ITunesMediaViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.row == lastItem {
             presenter.loadMore()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        presenter.save(with: objects[indexPath.row])
     }
 }
 
