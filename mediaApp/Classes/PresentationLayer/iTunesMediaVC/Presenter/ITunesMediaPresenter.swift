@@ -33,9 +33,28 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
         iTunesService.getITunesMedia(with: searchVal, success: { (code, objects) in
             self.searchValue = value
             self.objects = objects.results
-            self.view?.updateList(with: objects.results)
+            self.checkForSaved()
         }) { (code) in
             self.searchValue = ""
+        }
+    }
+    
+    func checkForSaved() {
+        let dbObjects = realmStorageService?.getItunesObjs() ?? []
+        
+        for index in 0..<objects.count {
+            objects[index].isSaved = false
+        }
+        
+        for dbObject in dbObjects {
+            if objects.contains(where: {$0.trackId == dbObject.trackId}) {
+                for index in 0..<objects.count {
+                    if (objects[index].trackId == dbObject.trackId) {
+                        objects[index].isSaved = true
+                    }
+                }
+            }
+            self.view?.updateList(with: self.objects)
         }
     }
     

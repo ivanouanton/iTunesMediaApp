@@ -26,6 +26,10 @@ class ITunesMediaViewController: UIViewController {
         setupSearchController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.checkForSaved()
+    }
     private func setupSearchController() {
         
         searchController.obscuresBackgroundDuringPresentation = false
