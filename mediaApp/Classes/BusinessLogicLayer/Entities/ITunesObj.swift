@@ -22,18 +22,23 @@ struct ITunesObj: Codable {
 
 // MARK: - Media
 struct Media: Codable {
+    let trackId: Int
+    let imgUrl: String?
     let trackName: String?
     let kind: String?
-    var saved: Bool = false
+    var isSaved: Bool = false
     
     enum CodingKeys: String, CodingKey {
+        case trackId = "trackId"
+        case imgUrl = "artworkUrl30"
         case trackName = "trackName"
         case kind = "kind"
     }
 }
 
 public class StoreMediaObj: Object {
-    @objc dynamic var id = ""
+    @objc dynamic var id: String = ""
+    @objc dynamic var imgUrl: String?
     @objc dynamic var trackName: String?
     @objc dynamic var kind: String?
     

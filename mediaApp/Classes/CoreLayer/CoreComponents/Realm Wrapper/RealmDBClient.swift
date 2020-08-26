@@ -27,7 +27,6 @@ class RealmDBClient: DBClentProtocol {
     
     func getItunesObjs() -> [Media] {
         let objects = DataProvider().objects(StoreMediaObj.self)?.toArray(ofType: StoreMediaObj.self)
-        return objects?.map { return Media(trackName: $0.trackName, kind: $0.kind) } ?? []
+        return objects?.map { return Media(trackId: Int($0.id)!, imgUrl: $0.imgUrl, trackName: $0.trackName, kind: $0.kind, isSaved: true) } ?? []
     }
-    
 }

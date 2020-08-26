@@ -15,6 +15,8 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
     private let iTunesService = ServiceRegistry.iTunesService
     private let realmStorageService: DBClentProtocol?
     
+    private var objects: [Media] = []
+    
     private var offset: Int = 0
     private var searchValue: String = ""
 
@@ -30,6 +32,7 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
         offset = 0
         iTunesService.getITunesMedia(with: searchVal, success: { (code, objects) in
             self.searchValue = value
+            self.objects = objects.results
             self.view?.updateList(with: objects.results)
         }) { (code) in
             self.searchValue = ""
@@ -40,7 +43,8 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
         
         offset += iTunesService.limit
         iTunesService.getITunesMedia(with: searchValue, offset: offset, success: { (code, objects) in
-            self.view?.updateMore(with: objects.results)
+            self.objects.append(contentsOf: objects.results)
+            self.view?.updateList(with: self.objects)
         }) { (code) in
             self.offset -= self.iTunesService.limit
         }
@@ -48,6 +52,14 @@ class ITunesMediaPresenter: ITunesMediaPresenterProtocol{
     
     func save(with value: Media) {
         realmStorageService?.saveObject(with: value)
+        
+        for index in 0..<objects.count {
+            if (objects[index].trackName == value.trackName) {
+                objects[index].isSaved = true
+            }
+        }
+        
+        view?.updateList(with: self.objects)
     }
     
 }

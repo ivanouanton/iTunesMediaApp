@@ -62,6 +62,7 @@ extension ITunesMediaViewController: UITableViewDataSource, UITableViewDelegate 
         
         cell.titleLbl?.text = objects[indexPath.row].trackName
         cell.typeLbl?.text = objects[indexPath.row].kind
+        cell.backgroundColor = objects[indexPath.row].isSaved ? .lightGray : .clear
         
         return cell
     }
@@ -74,7 +75,6 @@ extension ITunesMediaViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         presenter.save(with: objects[indexPath.row])
     }
 }
@@ -101,17 +101,14 @@ extension ITunesMediaViewController: UISearchBarDelegate{
 }
 
 extension ITunesMediaViewController: ITunesMediaViewProtocol {
-    func showModalError(with message: String) {
-        
+    func showModalError(with message: String = "Something was wrong") {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateList(with data: [Media]) {
         objects = data
-        tableView.reloadData()
-    }
-    
-    func updateMore(with data: [Media]) {
-        objects.append(contentsOf: data)
         tableView.reloadData()
     }
 }
