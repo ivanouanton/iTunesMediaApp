@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class ITunesMediaViewController: UIViewController {
     
@@ -21,13 +22,14 @@ class ITunesMediaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
-        
+        setupUI()
         setupSearchController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.checkForSaved()
+    }
     private func setupSearchController() {
         
         searchController.obscuresBackgroundDuringPresentation = false
@@ -36,6 +38,21 @@ class ITunesMediaViewController: UIViewController {
         searchController.searchBar.sizeToFit()
         searchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    private func setupUI() {
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Saved", style: .plain, target: self, action: #selector(savedTapped))
+
+    }
+    
+    @objc func savedTapped() {
+        let vc = ViewFactory.createStorageViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -49,6 +66,7 @@ extension ITunesMediaViewController: UITableViewDataSource, UITableViewDelegate 
         
         cell.titleLbl?.text = objects[indexPath.row].trackName
         cell.typeLbl?.text = objects[indexPath.row].kind
+        cell.backgroundColor = objects[indexPath.row].isSaved ? .lightGray : .clear
         
         return cell
     }
@@ -58,6 +76,10 @@ extension ITunesMediaViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.row == lastItem {
             presenter.loadMore()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.save(with: objects[indexPath.row])
     }
 }
 
@@ -83,17 +105,14 @@ extension ITunesMediaViewController: UISearchBarDelegate{
 }
 
 extension ITunesMediaViewController: ITunesMediaViewProtocol {
-    func showModalError(with message: String) {
-        
+    func showModalError(with message: String = "Something was wrong") {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateList(with data: [Media]) {
         objects = data
-        tableView.reloadData()
-    }
-    
-    func updateMore(with data: [Media]) {
-        objects.append(contentsOf: data)
         tableView.reloadData()
     }
 }
