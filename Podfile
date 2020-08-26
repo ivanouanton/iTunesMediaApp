@@ -6,6 +6,8 @@ target 'mediaApp' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'RealmSwift'
+  pod 'IQKeyboardManagerSwift'
 
   # Pods for mediaApp
 
