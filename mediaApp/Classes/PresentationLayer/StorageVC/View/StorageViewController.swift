@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class StorageViewController: UIViewController {
 
@@ -22,14 +23,6 @@ class StorageViewController: UIViewController {
         tableView.register(UINib(nibName: ITunesObjTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: ITunesObjTableViewCell.identifier)
         presenter.fetchSavedData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let objects = DataProvider().objects(StoreMediaObj.self)
-        print("Itunes objects count is: \(String(describing: objects?.count))")
-    }
-
 }
 
 extension StorageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -44,6 +37,19 @@ extension StorageViewController: UITableViewDataSource, UITableViewDelegate {
         cell.typeLbl?.text = iTunesObjs[indexPath.row].kind
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to delete the item?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (alert) in
+            try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+            try? AVAudioSession.sharedInstance().setActive(true)
+            self.presenter.remove(with: self.iTunesObjs[indexPath.row])
+        }))
+        
+        self.present(alert, animated: true)
     }
 }
 

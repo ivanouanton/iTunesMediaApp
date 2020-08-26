@@ -22,4 +22,9 @@ class StoragePresenter: StoragePresenterProtocol{
         view?.updateList(with: objects)
     }
     
+    func remove(with value: Media) {
+        realmStorageService?.removeItunesObj(with: value)
+        fetchSavedData()
+    }
+    
 }

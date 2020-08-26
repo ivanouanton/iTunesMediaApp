@@ -11,4 +11,5 @@ import Foundation
 protocol DBClentProtocol {
     func saveObject(with data: Media)
     func getItunesObjs() -> [Media]
+    func removeItunesObj(with value: Media)
 }

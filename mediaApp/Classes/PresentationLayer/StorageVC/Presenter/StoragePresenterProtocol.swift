@@ -9,4 +9,5 @@
 protocol StoragePresenterProtocol{
     init(view: StorageViewProtocol)
     func fetchSavedData()
+    func remove(with value: Media)
 }
